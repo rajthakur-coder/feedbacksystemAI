@@ -9,7 +9,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* 🔔 Global Toast UI */}
       <Toaster position="top-right" reverseOrder={false} />
       
       <Routes>

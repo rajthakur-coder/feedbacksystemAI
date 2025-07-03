@@ -43,7 +43,6 @@ export default function Dashboard() {
 
         if (location.state?.successMessage) {
             toast.success(location.state.successMessage);
-            // Clear the state so it doesn’t show again on reload
             navigate(location.pathname, { replace: true, state: {} });
         }
     }, [location, navigate]);
