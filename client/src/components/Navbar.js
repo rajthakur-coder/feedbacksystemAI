@@ -23,7 +23,7 @@ export default function Navbar() {
                 onClick={handleLogout}
                 className="px-5 py-2 font-semibold text-white bg-gradient-to-r from-pink-500 to-red-500 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all cursor-pointer"
             >
-                🚪 Logout
+                Logout
             </button>
         </nav>
     );

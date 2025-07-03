@@ -102,7 +102,7 @@ export default function Dashboard() {
                                 Generating...
                             </>
                         ) : (
-                            '🚀 Get AI Feedback'
+                            'Get AI Feedback'
                         )}
                     </button>
 
