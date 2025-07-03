@@ -75,7 +75,7 @@ export default function Login() {
 
                     <button
                         type="submit"
-                        className="w-full py-3 rounded-xl bg-white text-purple-700 font-bold hover:bg-gray-100 transition-all shadow-md hover:shadow-lg"
+                        className="w-full py-3 rounded-xl bg-white text-purple-700 font-bold hover:bg-gray-100 transition-all shadow-md hover:shadow-lg cursor-pointer"
                     >
                         Login
                     </button>
@@ -93,7 +93,7 @@ export default function Login() {
                     Don&apos;t have an account?{' '}
                     <button
                         onClick={() => navigate('/register')}
-                        className="text-white font-semibold underline underline-offset-4 hover:text-gray-200 transition"
+                        className="text-white font-semibold underline underline-offset-4 hover:text-gray-200 transition cursor-pointer"
                     >
                         Register
                     </button>

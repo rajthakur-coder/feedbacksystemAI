@@ -71,7 +71,7 @@ export default function Dashboard() {
                     <button
                         onClick={handleSubmit}
                         disabled={loading}
-                        className={`mt-6 w-full py-3 rounded-2xl font-bold text-lg transition-all duration-200 ${
+                        className={`mt-6 w-full py-3 rounded-2xl font-bold text-lg transition-all duration-200 cursor-pointer ${
                             loading
                                 ? 'bg-gray-400 text-white cursor-not-allowed'
                                 : 'bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white shadow-lg hover:shadow-2xl'
@@ -83,7 +83,7 @@ export default function Dashboard() {
                     {loading ? (
                         <div className="mt-10 flex flex-col items-center justify-center text-white/80">
                             <div className="w-10 h-10 border-4 border-cyan-300 border-t-transparent rounded-full animate-spin"></div>
-                            <p className="mt-4 text-lg font-medium tracking-wide">Generating feedback...</p>
+                            <p className="mt-4 text-lg font-medium tracking-wide ">Generating feedback...</p>
                         </div>
                     ) : feedback && (
                         <div className="mt-10 bg-white/10 border border-white/20 p-6 rounded-2xl shadow-lg animate-fade-in">

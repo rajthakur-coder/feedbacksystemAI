@@ -93,7 +93,7 @@ export default function Register() {
 
                     <button
                         type="submit"
-                        className="w-full py-3 rounded-xl bg-white text-indigo-700 font-bold hover:bg-gray-100 transition-all shadow-md hover:shadow-xl"
+                        className="w-full py-3 rounded-xl bg-white text-indigo-700 font-bold hover:bg-gray-100 transition-all shadow-md hover:shadow-xl cursor-pointer"
                     >
                         Register
                     </button>
@@ -110,7 +110,7 @@ export default function Register() {
                     Already have an account?{' '}
                     <button
                         onClick={() => navigate('/login')}
-                        className="text-white font-semibold underline underline-offset-4 hover:text-gray-200 transition"
+                        className="text-white font-semibold underline underline-offset-4 hover:text-gray-200 transition cursor-pointer"
                     >
                         Login
                     </button>
