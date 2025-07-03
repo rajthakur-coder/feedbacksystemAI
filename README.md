@@ -130,7 +130,23 @@ GEMINI_API_KEY=your_gemini_key  # if using gemini
 
 /README.md     → Setup + usage instructions
 
+## 📸 Screenshots
 
+### 🧠 Register Page
+![Screenshot 2025-07-04 023401](https://github.com/user-attachments/assets/f36252c3-dd85-4d34-9b22-af9cf524c3c2)
+
+
+### 🧠 Login Page
+![Screenshot 2025-07-04 023425](https://github.com/user-attachments/assets/6149f8b5-113c-4313-9083-378864797e4a)
+
+
+
+### 🧠 Dashboard Page
+![Screenshot 2025-07-04 024423](https://github.com/user-attachments/assets/8ebd7fa1-dab6-40ca-9071-582122295ef7)
+
+
+### 🧠 Dashboard Hiatory Page
+![Screenshot 2025-07-04 024444](https://github.com/user-attachments/assets/2d1acb40-8709-4176-b256-33cf864e9494)
 
 
 🧑‍💻 Author
