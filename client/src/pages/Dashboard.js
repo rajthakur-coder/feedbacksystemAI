@@ -26,14 +26,8 @@ export default function Dashboard() {
             const res = await API.post('/feedback', { user_input: input });
             const newFeedback = res.data.feedback;
             setFeedback(newFeedback);
-
-
-            setHistory((prev) => [
-                { _id: Date.now(), user_input: input, feedback: newFeedback },
-                ...prev.slice(0, 4)
-            ]);
-
             setInput('');
+            // ❌ Don't add new feedback to history here
         } catch (err) {
             console.error(err);
         } finally {
@@ -68,14 +62,14 @@ export default function Dashboard() {
                     <button
                         onClick={handleSubmit}
                         disabled={loading}
-                        className={`mt-6 w-full py-3 rounded-2xl font-bold text-lg transition-all duration-200 ${loading
+                        className={`mt-6 w-full py-3 rounded-2xl font-bold text-lg transition-all duration-200 ${
+                            loading
                                 ? 'bg-gray-400 text-white cursor-not-allowed'
                                 : 'bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white shadow-lg hover:shadow-2xl'
-                            }`}
+                        }`}
                     >
                         {loading ? 'Analyzing...' : '🚀 Get AI Feedback'}
                     </button>
-
 
                     {loading ? (
                         <div className="mt-10 flex flex-col items-center justify-center text-white/80">
@@ -89,10 +83,9 @@ export default function Dashboard() {
                         </div>
                     )}
 
-
                     {history.length > 0 && (
                         <div className="mt-14">
-                            <h3 className="text-2xl font-bold mb-6 text-white">📜 Your Last 5 Submissions</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-white">📜 Your Last Submissions</h3>
                             <div className="grid gap-6 md:grid-cols-2">
                                 {history.map((item) => (
                                     <div
