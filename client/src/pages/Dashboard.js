@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import API from '../utils/api';
 import Navbar from '../components/Navbar';
 
 export default function Dashboard() {
     const navigate = useNavigate();
+    const location = useLocation();
+
     const [input, setInput] = useState('');
     const [feedback, setFeedback] = useState('');
     const [history, setHistory] = useState([]);
@@ -27,7 +31,6 @@ export default function Dashboard() {
             const newFeedback = res.data.feedback;
             setFeedback(newFeedback);
             setInput('');
-            // ❌ Don't add new feedback to history here
         } catch (err) {
             console.error(err);
         } finally {
@@ -37,11 +40,18 @@ export default function Dashboard() {
 
     useEffect(() => {
         fetchHistory();
-    }, []);
+
+        if (location.state?.successMessage) {
+            toast.success(location.state.successMessage);
+            // Clear the state so it doesn’t show again on reload
+            navigate(location.pathname, { replace: true, state: {} });
+        }
+    }, [location, navigate]);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] text-white">
             <Navbar />
+            <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
 
             <div className="max-w-5xl mx-auto px-6 py-12">
                 <div className="bg-white/5 border border-white/10 rounded-3xl backdrop-blur-2xl shadow-2xl p-10">
@@ -62,10 +72,11 @@ export default function Dashboard() {
                     <button
                         onClick={handleSubmit}
                         disabled={loading}
-                        className={`mt-6 w-full py-3 rounded-2xl font-bold text-lg transition-all duration-200 ${loading
+                        className={`mt-6 w-full py-3 rounded-2xl font-bold text-lg transition-all duration-200 ${
+                            loading
                                 ? 'bg-gray-400 text-white cursor-not-allowed'
                                 : 'bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white shadow-lg hover:shadow-2xl'
-                            }`}
+                        }`}
                     >
                         {loading ? 'Analyzing...' : '🚀 Get AI Feedback'}
                     </button>
@@ -90,7 +101,7 @@ export default function Dashboard() {
                                     <div
                                         key={item._id}
                                         className="bg-white/5 border border-white/10 p-5 rounded-2xl shadow-md hover:shadow-xl transition duration-200"
-                                   >
+                                    >
                                         <p className="text-sm text-white/60 font-semibold mb-1">📝 Input:</p>
                                         <p className="mb-3 text-white">{item.user_input}</p>
                                         <p className="text-sm text-white/60 font-semibold mb-1">📌 Feedback:</p>
