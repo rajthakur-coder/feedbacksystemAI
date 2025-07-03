@@ -79,15 +79,15 @@ Evaluate the following input and provide feedback:
 
 ## Bonus Features (Implemented)
 Feature	Status
-🚀 Frontend deployed on Vercel, backend on Render/Railway	✅
+ Frontend deployed on Vercel, backend on Render/Railway	
 
-⏳ Loading state shown while feedback is generating	✅
+ Loading state shown while feedback is generating	
 
-🎨 Custom layout/theme added for better UI	✅
+ Custom layout/theme added for better UI	
 
-🔐 Protected routes using middleware like authenticateMiddleware.js	✅
+ Protected routes using middleware like authenticateMiddleware.js	
 
-🧼 Graceful handling of errors and user-friendly error messages	✅
+ Graceful handling of errors and user-friendly error messages	
 
 
 🧪 Local Setup Instructions
@@ -113,15 +113,21 @@ npm start
 Create a .env file inside /server with:
 
 PORT=5000
+
 MONGODB_URI=your_mongodb_connection_string
+
 JWT_SECRET=your_secret_key
+
 GEMINI_API_KEY=your_gemini_key  # if using gemini
 
 
 ## Submission Format (as per requirement)
 /client        → React App (Frontend)
+
 /server        → Express API App (Backend)
+
 /.env          → Secret keys (do not commit!)
+
 /README.md     → Setup + usage instructions
 
 
