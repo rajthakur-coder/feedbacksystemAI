@@ -62,11 +62,10 @@ export default function Dashboard() {
                     <button
                         onClick={handleSubmit}
                         disabled={loading}
-                        className={`mt-6 w-full py-3 rounded-2xl font-bold text-lg transition-all duration-200 ${
-                            loading
+                        className={`mt-6 w-full py-3 rounded-2xl font-bold text-lg transition-all duration-200 ${loading
                                 ? 'bg-gray-400 text-white cursor-not-allowed'
                                 : 'bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white shadow-lg hover:shadow-2xl'
-                        }`}
+                            }`}
                     >
                         {loading ? 'Analyzing...' : '🚀 Get AI Feedback'}
                     </button>
@@ -91,7 +90,7 @@ export default function Dashboard() {
                                     <div
                                         key={item._id}
                                         className="bg-white/5 border border-white/10 p-5 rounded-2xl shadow-md hover:shadow-xl transition duration-200"
-                                    >
+                                   >
                                         <p className="text-sm text-white/60 font-semibold mb-1">📝 Input:</p>
                                         <p className="mb-3 text-white">{item.user_input}</p>
                                         <p className="text-sm text-white/60 font-semibold mb-1">📌 Feedback:</p>
