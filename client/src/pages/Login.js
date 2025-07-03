@@ -75,7 +75,6 @@ export default function Login({ setToken }) {
             </div>
           </div>
 
-          {/* ✅ Premium Gradient Button */}
           <button
             type="submit"
             disabled={loading}
