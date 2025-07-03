@@ -93,7 +93,6 @@ export default function Register() {
             </div>
           </div>
 
-          {/* ✅ Premium Gradient Button */}
           <button
             type="submit"
             disabled={loading}
